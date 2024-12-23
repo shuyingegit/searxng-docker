@@ -28,8 +28,8 @@ services:
     environment:
       - SEARXNG_URL=${SEARXNG_HOSTNAME:-http://localhost:16580}/
       - SEARXNG_BASE_URL=${SEARXNG_HOSTNAME:-http://localhost:16580}/
-    env_file:
-      - secret.env
+    # env_file:
+    #   - secret.env
     cap_drop:
       - ALL
     cap_add:
