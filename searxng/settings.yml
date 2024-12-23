@@ -7,5 +7,46 @@ server:
   image_proxy: true
 ui:
   static_use_hash: true
+  results_on_new_tab: true  # 在新标签页中打开搜索结果
+  infinite_scroll: true  # 启用无限滚动瀑布流
 redis:
   url: redis://redis:6379/0
+engines:  # 搜索引擎配置列表
+  - name: bing  # 必应搜索
+    disabled: false
+    weight: 3  # 增加权重使其优先显示
+  - name: seznam  # Seznam搜索(捷克共和国搜索引擎)
+    disabled: false
+    weight: 1
+  - name: presearch  # Presearch去中心化搜索引擎
+    disabled: false
+    weight: 1
+  - name: mojeek  # Mojeek独立搜索引擎
+    disabled: false
+    weight: 1
+  - name: presearch videos  # Presearch视频搜索
+    disabled: false
+    weight: 1
+  - name: naver  # Naver韩国搜索引擎
+    disabled: false
+    weight: 1
+  - name: brave  # Brave浏览器搜索
+    disabled: true
+  - name: duckduckgo  # DuckDuckGo隐私搜索
+    disabled: true
+  - name: goo  # Goo日本搜索引擎
+    disabled: true
+  - name: google  # Google搜索
+    disabled: true
+  - name: qwant  # Qwant欧洲搜索引擎
+    disabled: true
+  - name: startpage  # Startpage隐私搜索
+    disabled: true
+  - name: wilby  # Wilby搜索引擎
+    disabled: true
+  - name: wikidata  # Wikidata知识库搜索
+    disabled: true
+  - name: wikipedia  # 维基百科搜索
+    disabled: true
+  - name: yahoo  # 雅虎搜索
+    disabled: true
